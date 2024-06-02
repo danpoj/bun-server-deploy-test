@@ -9,7 +9,7 @@ app.use('*', logger());
 
 app.basePath('/api').route('/expenses', expensesRoute);
 
-app.get('*', serveStatic({ root: './frontend/dist' }));
-app.get('*', serveStatic({ path: './frontend/dist/index.html' }));
+app.use('*', serveStatic({ root: './client/dist' }));
+app.get('*', serveStatic({ path: './client/dist/index.html' }));
 
 export default app;
